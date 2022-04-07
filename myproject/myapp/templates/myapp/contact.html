@@ -1,0 +1,48 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1 class="text-center" text-dark>CONTACT US</h1>
+            <form method="post" action="">
+                {% csrf_token %}
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Please Enter Name" name="name">
+  </div>
+
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email"  placeholder="Please Enter Your Email Address " name="email">
+  </div>
+
+
+   <div class="form-group">
+      <label for="feedback">Feedback</label>
+       <textarea cols="5" rows="5" class="form-control" id="feedback" placeholder="Please Enter Feedback"name="feedback"></textarea>
+
+   </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+                <div>
+                    {% for m in messages %}
+
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Congratulations!</strong> {{m}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+
+                    {% endfor %}
+                </div>
+</form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

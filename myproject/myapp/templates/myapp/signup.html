@@ -1,0 +1,33 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+<div class="container">
+ <div class="row">
+
+        <div class="col-sm-4">
+            <h2 class="alert alert-dark">SIGNUP FORM</h2>
+            <form method="post" action="">
+
+                {% csrf_token %}
+                {{f.as_p}}
+
+                <input type="submit" value="signup" class="btn btn-primary">
+
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+
+{% endblock %}
